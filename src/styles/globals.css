@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  
+  /* Casa Larga Brand Colors */
+  --brown-primary: #AF6900;
+  --brown-dark: #482817;
+  --brown-light: #9E845C;
+  --cream: #F5EBDA;
+  
+  /* Neutral Palette */
+  --white: #FFFFFF;
+  --light-blue-gray: #F0F5FA;
+  --gray-light: #D1D5DB;
+  --gray-medium: #334155;
+  --gray-dark: #1e293b;
+  --black: #111111;
+  
+  /* Accent Colors */
+  --blue-primary: #046bd2;
+  --blue-dark: #045cb4;
+  
+  /* Shadcn mappings */
+  --background: #ffffff;
+  --foreground: #1e293b;
+  --card: #ffffff;
+  --card-foreground: #334155;
+  --popover: #ffffff;
+  --popover-foreground: #1e293b;
+  --primary: #AF6900;
+  --primary-foreground: #ffffff;
+  --secondary: #F5EBDA;
+  --secondary-foreground: #482817;
+  --muted: #F0F5FA;
+  --muted-foreground: #334155;
+  --accent: #F5EBDA;
+  --accent-foreground: #482817;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: #D1D5DB;
+  --input: transparent;
+  --input-background: #F0F5FA;
+  --switch-background: #D1D5DB;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #AF6900;
+  --chart-1: #AF6900;
+  --chart-2: #9E845C;
+  --chart-3: #482817;
+  --chart-4: #046bd2;
+  --chart-5: #334155;
+  --radius: 1.25rem;
+  --sidebar: #F0F5FA;
+  --sidebar-foreground: #334155;
+  --sidebar-primary: #AF6900;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #F5EBDA;
+  --sidebar-accent-foreground: #482817;
+  --sidebar-border: #D1D5DB;
+  --sidebar-ring: #AF6900;
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/**
+ * Casa Larga Typography System
+ */
+@layer base {
+  body {
+    font-family: 'Nunito Sans', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-weight: 600;
+      line-height: 1.25;
+      color: var(--gray-dark);
+      font-kerning: normal;
+      font-feature-settings: "liga" 1;
+    }
+
+    h2 {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-weight: 600;
+      line-height: 1.25;
+      color: var(--gray-dark);
+    }
+
+    h3 {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-weight: 600;
+      line-height: 1.25;
+      color: var(--gray-dark);
+    }
+
+    h4 {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-weight: 400;
+      line-height: 1.25;
+      color: var(--gray-dark);
+    }
+
+    p {
+      font-family: 'Nunito Sans', system-ui, sans-serif;
+      font-weight: 400;
+      line-height: 1.625;
+      color: var(--gray-medium);
+    }
+
+    label {
+      font-family: 'Nunito Sans', system-ui, sans-serif;
+      font-weight: 500;
+      line-height: 1.5;
+      color: var(--gray-dark);
+    }
+
+    button {
+      font-family: 'Nunito Sans', system-ui, sans-serif;
+      font-weight: 700;
+      line-height: 1;
+      transition: all 0.3s ease;
+    }
+
+    input {
+      font-family: 'Nunito Sans', system-ui, sans-serif;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+  }
+}
+
+/* Casa Larga Custom Classes */
+@layer utilities {
+  .hero-title {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-shadow: 0 1px 2px rgba(0,0,0,.35);
+    letter-spacing: 0.015em;
+    line-height: 1.15;
+    max-width: 25ch;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+
+  .section-title {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--brown-dark);
+    line-height: 1.3;
+  }
+
+  .welcome-title {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    letter-spacing: 2px;
+    font-weight: 400;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+
+  .btn-casa {
+    padding: 18px 45px;
+    border: none;
+    border-left: 4px solid var(--brown-dark);
+    border-radius: 0;
+    background: rgba(158, 132, 92, 0.61);
+    color: white;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-casa::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--brown-dark);
+    transition: left 0.3s ease;
+    z-index: -1;
+  }
+
+  .btn-casa:hover::before {
+    left: 0;
+  }
+
+  .btn-casa:hover {
+    color: white;
+  }
+
+  @media (max-width: 768px) {
+    .btn-casa {
+      padding: 14px 28px;
+    }
+  }
+
+  @media (max-width: 544px) {
+    .btn-casa {
+      padding: 12px 24px;
+    }
+  }
+
+  .wine-card {
+    background: rgba(250,248,244,0.9);
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+  }
+
+  .wine-card:hover {
+    box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+    transform: translateY(-2px);
+  }
+
+  .kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #6B7280;
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}

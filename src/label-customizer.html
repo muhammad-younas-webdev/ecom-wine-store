@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Casa Larga - Custom Label Designer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Nunito+Sans:wght@300;400;600;700&display=swap"
+      rel="stylesheet" />
+
+    <!-- Link :: Nunito Sans Font Family  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+      rel="stylesheet" />
+
+    <!-- Link :: CSS File  -->
+    <link rel="stylesheet" href="label-customizer.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- ################   -->
+      <!-- ################   -->
+      <!-- ################   -->
+      <!-- ################   -->
+
+      <!-- Header -->
+      <!-- <div class="header">
+            <button class="back-button" onclick="goBack()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Back to Shop
+            </button>
+            <h1>Custom Label Designer</h1>
+            <p class="subtitle">Follow the steps below to create your personalized wine label</p>
+        </div> -->
+      <!-- ################   -->
+      <!-- ################   -->
+      <!-- ################   -->
+      <!-- ################   -->
+
+      <!-- Main Grid -->
+      <div class="main-grid">
+        <!-- Sidebar -->
+        <div class="sidebar">
+          <!-- Progress -->
+          <div class="progress-card">
+            <div class="progress-header">
+              <span>Progress</span>
+              <span id="progressText">0 of 4 steps</span>
+            </div>
+            <div class="progress-bar">
+              <div
+                class="progress-fill"
+                id="progressFill"
+                style="width: 0%"></div>
+            </div>
+          </div>
+
+          <!-- Step 1: Background -->
+          <div class="accordion-step">
+            <button class="accordion-header" onclick="toggleAccordion(1)">
+              <div class="step-icon" id="icon1">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2">
+                  <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
+                </svg>
+              </div>
+              <div class="step-info">
+                <div class="step-title">Step 1: Select Background</div>
+                <div class="step-desc">Choose a color template</div>
+              </div>
+            </button>
+            <div class="accordion-content open" id="content1">
+              <div class="accordion-body">
+                <div class="template-grid">
+                  <div
+                    class="template-card selected"
+                    onclick="selectTemplate(1)"
+                    id="template1"
+                    style="
+                      background: linear-gradient(
+                        180deg,
+                        #d4af37 0%,
+                        #c9a961 50%,
+                        #d4af37 100%
+                      );
+                    ">
+                    <div class="template-label">Classic Gold</div>
+                    <div class="template-check">✓</div>
+                  </div>
+                  <div
+                    class="template-card"
+                    onclick="selectTemplate(2)"
+                    id="template2"
+                    style="
+                      background: linear-gradient(
+                        180deg,
+                        #722f37 0%,
+                        #8b3a3a 50%,
+                        #722f37 100%
+                      );
+                    ">
+                    <div class="template-label">Deep Burgundy</div>
+                    <div class="template-check">✓</div>
+                  </div>
+                  <div
+                    class="template-card"
+                    onclick="selectTemplate(3)"
+                    id="template3"
+                    style="
+                      background: linear-gradient(
+                        180deg,
+                        #2d5016 0%,
+                        #3d6b1f 50%,
+                        #2d5016 100%
+                      );
+                    ">
+                    <div class="template-label">Forest Green</div>
+                    <div class="template-check">✓</div>
+                  </div>
+                  <div
+                    class="template-card"
+                    onclick="selectTemplate(4)"
+                    id="template4"
+                    style="
+                      background: linear-gradient(
+                        180deg,
+                        #4a235a 0%,
+                        #6c3483 50%,
+                        #4a235a 100%
+                      );
+                    ">
+                    <div class="template-label">Royal Purple</div>
+                    <div class="template-check">✓</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2: Image Upload -->
+          <div class="accordion-step">
+            <button class="accordion-header" onclick="toggleAccordion(2)">
+              <div class="step-icon" id="icon2">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <path d="M21 15l-5-5L5 21" />
+                </svg>
+              </div>
+              <div class="step-info">
+                <div class="step-title">Step 2: Upload Image</div>
+                <div class="step-desc">Add custom artwork (optional)</div>
+              </div>
+            </button>
+            <div class="accordion-content" id="content2">
+              <div class="accordion-body">
+                <div
+                  class="upload-area"
+                  onclick="document.getElementById('fileInput').click()">
+                  <div id="uploadPlaceholder">
+                    <svg
+                      class="upload-icon"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2">
+                      <path
+                        d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12" />
+                    </svg>
+                    <p style="color: var(--brown-dark); margin-bottom: 0.25rem"
+                      >Drop your image here</p
+                    >
+                    <p style="font-size: 0.875rem; color: var(--gray-medium)"
+                      >or click to browse</p
+                    >
+                  </div>
+                  <div id="uploadPreview" style="display: none">
+                    <img id="previewImg" class="upload-preview" alt="Preview" />
+                    <p style="font-size: 0.875rem; color: var(--gray-medium)"
+                      >Click to change image</p
+                    >
+                  </div>
+                </div>
+                <input
+                  type="file"
+                  id="fileInput"
+                  accept="image/*"
+                  onchange="handleImageUpload(event)" />
+
+                <div
+                  id="removeImageBtn"
+                  style="display: none; margin-top: 0.75rem">
+                  <button
+                    class="btn btn-outline btn-small btn-remove"
+                    onclick="clearImage()">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2">
+                      <path d="M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9z" />
+                      <path d="M9 9l6 6M15 9l-6 6" />
+                    </svg>
+                    Remove Image
+                  </button>
+                </div>
+
+                <div class="info-box blue mt-2">
+                  <strong>Tip:</strong> 900×1350 pixels (300 DPI) recommended.
+                  Image covers the full label.
+                </div>
+
+                <div
+                  id="imageControls"
+                  style="display: none"
+                  class="section-divider">
+                  <div class="section-header">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2">
+                      <rect x="3" y="3" width="18" height="18" rx="2" />
+                      <circle cx="8.5" cy="8.5" r="1.5" />
+                      <path d="M21 15l-5-5L5 21" />
+                    </svg>
+                    Adjust Image
+                  </div>
+
+                  <div class="control-group">
+                    <div class="slider-header">
+                      <label class="control-label">Scale</label>
+                      <span class="slider-value" id="scaleValue">100%</span>
+                    </div>
+                    <input
+                      type="range"
+                      class="slider"
+                      min="50"
+                      max="200"
+                      step="5"
+                      value="100"
+                      id="imageScale"
+                      oninput="updatePreview()" />
+                  </div>
+
+                  <div class="control-group">
+                    <div class="slider-header">
+                      <label class="control-label">Opacity</label>
+                      <span class="slider-value" id="opacityValue">100%</span>
+                    </div>
+                    <input
+                      type="range"
+                      class="slider"
+                      min="10"
+                      max="100"
+                      step="5"
+                      value="100"
+                      id="imageOpacity"
+                      oninput="updatePreview()" />
+                  </div>
+
+                  <div class="control-group">
+                    <div class="slider-header">
+                      <label class="control-label">Horizontal Position</label>
+                      <span class="slider-value" id="posXValue">50%</span>
+                    </div>
+                    <input
+                      type="range"
+                      class="slider"
+                      min="0"
+                      max="100"
+                      step="5"
+                      value="50"
+                      id="imagePosX"
+                      oninput="updatePreview()" />
+                  </div>
+
+                  <div class="control-group">
+                    <div class="slider-header">
+                      <label class="control-label">Vertical Position</label>
+                      <span class="slider-value" id="posYValue">50%</span>
+                    </div>
+                    <input
+                      type="range"
+                      class="slider"
+                      min="0"
+                      max="100"
+                      step="5"
+                      value="50"
+                      id="imagePosY"
+                      oninput="updatePreview()" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3: Enhance Visibility -->
+          <div class="accordion-step">
+            <button class="accordion-header" onclick="toggleAccordion(3)">
+              <div class="step-icon" id="icon3">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2">
+                  <path d="M12 3l2 7h7l-5.5 4 2 7L12 17l-5.5 4 2-7L3 10h7z" />
+                </svg>
+              </div>
+              <div class="step-info">
+                <div class="step-title">Step 3: Enhance Visibility</div>
+                <div class="step-desc"
+                  >Add overlays for text contrast (optional)</div
+                >
+              </div>
+            </button>
+            <div class="accordion-content" id="content3">
+              <div class="accordion-body">
+                <p
+                  style="
+                    font-size: 0.875rem;
+                    color: var(--gray-medium);
+                    margin-bottom: 1rem;
+                  ">
+                  Improve text readability on busy backgrounds
+                </p>
+
+                <div class="control-group">
+                  <div class="slider-header">
+                    <label class="control-label"
+                      >Vignette (Edge Darkening)</label
+                    >
+                    <span class="slider-value" id="vignetteValue">0%</span>
+                  </div>
+                  <input
+                    type="range"
+                    class="slider"
+                    min="0"
+                    max="100"
+                    step="5"
+                    value="0"
+                    id="vignette"
+                    oninput="updatePreview()" />
+                </div>
+
+                <div class="control-group">
+                  <div class="slider-header">
+                    <label class="control-label">Dark Overlay</label>
+                    <span class="slider-value" id="overlayValue">0%</span>
+                  </div>
+                  <input
+                    type="range"
+                    class="slider"
+                    min="0"
+                    max="100"
+                    step="5"
+                    value="0"
+                    id="darkOverlay"
+                    oninput="updatePreview()" />
+                </div>
+
+                <div class="info-box amber">
+                  <strong>Tip:</strong> Use these when your image has bright
+                  areas or complex details.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 4: Add Message -->
+          <div class="accordion-step">
+            <button class="accordion-header" onclick="toggleAccordion(4)">
+              <div class="step-icon" id="icon4">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2">
+                  <path d="M4 7V4h16v3M9 20h6M12 4v16" />
+                </svg>
+              </div>
+              <div class="step-info">
+                <div class="step-title">Step 4: Add Message</div>
+                <div class="step-desc">Include a special note (optional)</div>
+              </div>
+            </button>
+            <div class="accordion-content" id="content4">
+              <div class="accordion-body">
+                <div class="control-group">
+                  <label class="control-label mb-2"
+                    >Personal Message (max 100 characters)</label
+                  >
+                  <textarea
+                    id="customMessage"
+                    placeholder="Happy Anniversary! Love, John & Jane"
+                    maxlength="100"
+                    oninput="updatePreview()"></textarea>
+                  <div class="flex justify-between mt-2">
+                    <span style="font-size: 0.75rem; color: var(--gray-medium)">
+                      <span id="charCount">0</span>/100 characters
+                    </span>
+                    <span
+                      id="charWarning"
+                      style="font-size: 0.75rem; color: #d97706; display: none">
+                      Almost at limit
+                    </span>
+                  </div>
+                </div>
+
+                <div
+                  id="textControls"
+                  style="display: none"
+                  class="section-divider">
+                  <!-- Basic Styling -->
+                  <div class="section-header">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2">
+                      <path d="M4 7V4h16v3M9 20h6M12 4v16" />
+                    </svg>
+                    Basic Styling
+                  </div>
+
+                  <div
+                    style="
+                      display: grid;
+                      grid-template-columns: 1fr 1fr;
+                      gap: 0.75rem;
+                      margin-bottom: 1rem;
+                    ">
+                    <div class="control-group">
+                      <div class="slider-header">
+                        <label class="control-label">Size</label>
+                        <span class="slider-value" id="textSizeValue"
+                          >14px</span
+                        >
+                      </div>
+                      <input
+                        type="range"
+                        class="slider"
+                        min="10"
+                        max="32"
+                        step="2"
+                        value="14"
+                        id="textSize"
+                        oninput="updatePreview()" />
+                    </div>
+
+                    <div class="control-group">
+                      <label class="control-label mb-2">Font</label>
+                      <div class="button-grid">
+                        <button
+                          class="toggle-button active"
+                          onclick="setFontFamily('serif')"
+                          id="fontSerif"
+                          >Serif</button
+                        >
+                        <button
+                          class="toggle-button"
+                          onclick="setFontFamily('sans')"
+                          id="fontSans"
+                          >Sans</button
+                        >
+                        <button
+                          class="toggle-button"
+                          onclick="setFontFamily('script')"
+                          id="fontScript"
+                          >Script</button
+                        >
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="control-group">
+                    <label class="control-label mb-2">Text Color</label>
+                    <div class="color-grid">
+                      <button
+                        class="color-button selected"
+                        style="background: #482817"
+                        onclick="setTextColor('#482817')"
+                        id="color1"></button>
+                      <button
+                        class="color-button"
+                        style="background: #af6900"
+                        onclick="setTextColor('#AF6900')"
+                        id="color2"></button>
+                      <button
+                        class="color-button"
+                        style="background: #ffffff; border-color: #ccc"
+                        onclick="setTextColor('#FFFFFF')"
+                        id="color3"></button>
+                      <button
+                        class="color-button"
+                        style="background: #000000"
+                        onclick="setTextColor('#000000')"
+                        id="color4"></button>
+                      <button
+                        class="color-button"
+                        style="background: #d4af37"
+                        onclick="setTextColor('#D4AF37')"
+                        id="color5"></button>
+                      <button
+                        class="color-button"
+                        style="background: #722f37"
+                        onclick="setTextColor('#722F37')"
+                        id="color6"></button>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-2 mb-3">
+                    <button
+                      class="toggle-button"
+                      style="flex: 1"
+                      onclick="toggleBold()"
+                      id="boldBtn">
+                      <strong>B</strong> Bold
+                    </button>
+                    <button
+                      class="toggle-button active"
+                      style="flex: 1"
+                      onclick="toggleItalic()"
+                      id="italicBtn">
+                      <em>I</em> Italic
+                    </button>
+                  </div>
+
+                  <!-- Visibility & Effects -->
+                  <div class="section-divider">
+                    <div class="section-header">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+                        <path
+                          d="M12 3l2 7h7l-5.5 4 2 7L12 17l-5.5 4 2-7L3 10h7z" />
+                      </svg>
+                      Visibility & Effects
+                    </div>
+
+                    <div class="control-group">
+                      <label class="control-label mb-2">Background</label>
+                      <div class="button-grid">
+                        <button
+                          class="toggle-button active"
+                          onclick="setTextBg('solid')"
+                          id="bgSolid">
+                          <div style="font-size: 0.75rem; line-height: 1.2"
+                            >Solid<br /><span
+                              style="
+                                font-size: 0.625rem;
+                                color: var(--gray-medium);
+                              "
+                              >White</span
+                            ></div
+                          >
+                        </button>
+                        <button
+                          class="toggle-button"
+                          onclick="setTextBg('semi')"
+                          id="bgSemi">
+                          <div style="font-size: 0.75rem; line-height: 1.2"
+                            >Semi<br /><span
+                              style="
+                                font-size: 0.625rem;
+                                color: var(--gray-medium);
+                              "
+                              >Dark</span
+                            ></div
+                          >
+                        </button>
+                        <button
+                          class="toggle-button"
+                          onclick="setTextBg('none')"
+                          id="bgNone">
+                          <div style="font-size: 0.75rem; line-height: 1.2"
+                            >None<br /><span
+                              style="
+                                font-size: 0.625rem;
+                                color: var(--gray-medium);
+                              "
+                              >Clear</span
+                            ></div
+                          >
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="control-group">
+                      <div class="inline-toggle">
+                        <label class="control-label">Text Shadow</label>
+                        <button
+                          class="toggle-btn-small"
+                          onclick="toggleShadow()"
+                          id="shadowToggle"
+                          >Off</button
+                        >
+                      </div>
+                      <div id="shadowControls" style="display: none">
+                        <div class="slider-header">
+                          <span class="control-label">Intensity</span>
+                          <span class="slider-value" id="shadowIntensityValue"
+                            >50%</span
+                          >
+                        </div>
+                        <input
+                          type="range"
+                          class="slider"
+                          min="0"
+                          max="100"
+                          step="10"
+                          value="50"
+                          id="shadowIntensity"
+                          oninput="updatePreview()" />
+                      </div>
+                    </div>
+
+                    <div class="control-group">
+                      <div class="inline-toggle">
+                        <label class="control-label">Text Outline</label>
+                        <button
+                          class="toggle-btn-small"
+                          onclick="toggleStroke()"
+                          id="strokeToggle"
+                          >Off</button
+                        >
+                      </div>
+                      <div id="strokeControls" style="display: none">
+                        <div class="slider-header mb-1">
+                          <span class="control-label">Width</span>
+                          <span class="slider-value" id="strokeWidthValue"
+                            >1px</span
+                          >
+                        </div>
+                        <input
+                          type="range"
+                          class="slider"
+                          min="1"
+                          max="4"
+                          step="0.5"
+                          value="1"
+                          id="strokeWidth"
+                          oninput="updatePreview()" />
+
+                        <label
+                          class="control-label mb-2 mt-2"
+                          style="display: block"
+                          >Outline Color</label
+                        >
+                        <div
+                          style="
+                            display: grid;
+                            grid-template-columns: repeat(4, 1fr);
+                            gap: 0.5rem;
+                          ">
+                          <button
+                            class="color-button selected"
+                            style="background: #ffffff; border-color: #ccc"
+                            onclick="setStrokeColor('#FFFFFF')"
+                            id="stroke1"></button>
+                          <button
+                            class="color-button"
+                            style="background: #000000"
+                            onclick="setStrokeColor('#000000')"
+                            id="stroke2"></button>
+                          <button
+                            class="color-button"
+                            style="background: #d4af37"
+                            onclick="setStrokeColor('#D4AF37')"
+                            id="stroke3"></button>
+                          <button
+                            class="color-button"
+                            style="background: #482817"
+                            onclick="setStrokeColor('#482817')"
+                            id="stroke4"></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Layout -->
+                  <div class="section-divider">
+                    <div class="section-header">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
+                      </svg>
+                      Layout
+                    </div>
+
+                    <div class="control-group">
+                      <label class="control-label mb-2">Alignment</label>
+                      <div class="button-grid">
+                        <button
+                          class="toggle-button"
+                          onclick="setAlignment('left')"
+                          id="alignLeft">
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="17" y1="10" x2="3" y2="10"></line>
+                            <line x1="21" y1="6" x2="3" y2="6"></line>
+                            <line x1="21" y1="14" x2="3" y2="14"></line>
+                            <line x1="17" y1="18" x2="3" y2="18"></line>
+                          </svg>
+                        </button>
+                        <button
+                          class="toggle-button active"
+                          onclick="setAlignment('center')"
+                          id="alignCenter">
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="18" y1="10" x2="6" y2="10"></line>
+                            <line x1="21" y1="6" x2="3" y2="6"></line>
+                            <line x1="21" y1="14" x2="3" y2="14"></line>
+                            <line x1="18" y1="18" x2="6" y2="18"></line>
+                          </svg>
+                        </button>
+                        <button
+                          class="toggle-button"
+                          onclick="setAlignment('right')"
+                          id="alignRight">
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="21" y1="10" x2="7" y2="10"></line>
+                            <line x1="21" y1="6" x2="3" y2="6"></line>
+                            <line x1="21" y1="14" x2="3" y2="14"></line>
+                            <line x1="21" y1="18" x2="7" y2="18"></line>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="control-group">
+                      <div class="slider-header">
+                        <label class="control-label">Horizontal</label>
+                        <span class="slider-value" id="textPosXValue">50%</span>
+                      </div>
+                      <input
+                        type="range"
+                        class="slider"
+                        min="0"
+                        max="100"
+                        step="5"
+                        value="50"
+                        id="textPosX"
+                        oninput="updatePreview()" />
+                    </div>
+
+                    <div class="control-group">
+                      <div class="slider-header">
+                        <label class="control-label">Vertical</label>
+                        <span class="slider-value" id="textPosYValue">50%</span>
+                      </div>
+                      <input
+                        type="range"
+                        class="slider"
+                        min="0"
+                        max="100"
+                        step="5"
+                        value="50"
+                        id="textPosY"
+                        oninput="updatePreview()" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="info-box green">
+                  <strong>Tip:</strong> The safe zone (green guides) keeps text
+                  from being cut during production.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="action-card">
+            <button class="btn btn-primary" onclick="addToCart()">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2">
+                <path
+                  d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+              </svg>
+              Add to Cart ($49.99)
+            </button>
+            <button class="btn btn-outline" onclick="resetAll()">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2">
+                <path d="M1 4v6h6M23 20v-6h-6" />
+                <path
+                  d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15" />
+              </svg>
+              Reset All
+            </button>
+          </div>
+        </div>
+
+        <!-- Preview -->
+        <div class="preview-card">
+          <div class="preview-header">
+            <div class="preview-title">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2">
+                <path d="M12 3l2 7h7l-5.5 4 2 7L12 17l-5.5 4 2-7L3 10h7z" />
+              </svg>
+              <h2>Live Preview</h2>
+            </div>
+            <button
+              class="toggle-btn-small active"
+              onclick="toggleGuides()"
+              id="guidesToggle">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+              Hide Guides
+            </button>
+          </div>
+          <p
+            style="
+              font-size: 0.875rem;
+              color: var(--gray-medium);
+              margin-bottom: 1.5rem;
+            ">
+            Updates in real-time as you customize your label
+          </p>
+
+          <div class="preview-canvas">
+            <div class="label-container" id="labelPreview">
+              <!-- Background -->
+              <div
+                class="label-layer"
+                id="backgroundLayer"
+                style="
+                  background: linear-gradient(
+                    180deg,
+                    #d4af37 0%,
+                    #c9a961 50%,
+                    #d4af37 100%
+                  );
+                "></div>
+
+              <!-- Uploaded Image -->
+              <div
+                class="label-layer"
+                id="imageLayer"
+                style="display: none; overflow: hidden">
+                <div
+                  style="
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    transform-origin: center;
+                  "
+                  id="imageTransform">
+                  <img
+                    id="labelImage"
+                    style="
+                      position: absolute;
+                      inset: 0;
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                    "
+                    alt="Custom" />
+                </div>
+              </div>
+
+              <!-- Vignette -->
+              <div
+                class="label-layer"
+                id="vignetteLayer"
+                style="display: none"></div>
+
+              <!-- Dark Overlay -->
+              <div
+                class="label-layer"
+                id="overlayLayer"
+                style="display: none; background: black"></div>
+
+              <!-- SVG Template -->
+              <div class="label-layer" id="svgLayer">
+                <svg
+                  viewBox="0 0 387 306"
+                  width="100%"
+                  height="100%"
+                  preserveAspectRatio="none">
+                  <text
+                    x="193.5"
+                    y="80"
+                    text-anchor="middle"
+                    font-family="Libre Baskerville, serif"
+                    font-size="32"
+                    font-weight="bold"
+                    id="svgText1">
+                    CASA LARGA
+                  </text>
+                  <text
+                    x="193.5"
+                    y="110"
+                    text-anchor="middle"
+                    font-family="Libre Baskerville, serif"
+                    font-size="16"
+                    font-style="italic"
+                    id="svgText2">
+                    Vineyards
+                  </text>
+                  <text
+                    x="193.5"
+                    y="250"
+                    text-anchor="middle"
+                    font-family="Nunito Sans, sans-serif"
+                    font-size="14"
+                    id="svgText3">
+                    FINGER LAKES
+                  </text>
+                  <text
+                    x="193.5"
+                    y="270"
+                    text-anchor="middle"
+                    font-family="Nunito Sans, sans-serif"
+                    font-size="12"
+                    id="svgText4">
+                    NEW YORK
+                  </text>
+                </svg>
+              </div>
+
+              <!-- Custom Message -->
+              <div
+                class="label-text-overlay"
+                id="textOverlay"
+                style="display: none; justify-content: center">
+                <div id="labelText" class="label-text"></div>
+              </div>
+
+              <!-- Guides -->
+              <div class="guide-overlay" id="guides">
+                <div class="guide-die-cut"></div>
+                <div class="guide-bleed"></div>
+                <div class="guide-safe"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="guide-legend" id="guidesLegend">
+            <div class="legend-item">
+              <div
+                class="legend-line"
+                style="border-top: 2px dashed #ef4444"></div>
+              <span style="color: var(--gray-medium)">Die Cut</span>
+            </div>
+            <div class="legend-item">
+              <div
+                class="legend-line"
+                style="border-top: 1px dashed #f59e0b"></div>
+              <span style="color: var(--gray-medium)">Bleed</span>
+            </div>
+            <div class="legend-item">
+              <div
+                class="legend-line"
+                style="border-top: 1px dashed #10b981"></div>
+              <span style="color: var(--gray-medium)">Safe</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script src="label-customizer.js"></script>
+</html>
