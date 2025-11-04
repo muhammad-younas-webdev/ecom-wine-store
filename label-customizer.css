@@ -18,12 +18,10 @@ body {
     background-color: var(--cream);
     color: var(--brown-dark);
     line-height: 1.6;
-    background: #fff;
 }
 
 .container {
     max-width: 1280px;
-    width: 100%;
     margin: 0 auto;
     padding: 0 1.5rem;
 }
@@ -123,9 +121,6 @@ h1 {
     border: 1px solid rgba(158, 132, 92, 0.2);
     overflow: hidden;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    border: 1px solid red;
-    border: 1px solid rgb(209, 213, 219);
-    transition: all .3s ease;
 }
 
 .accordion-header {
@@ -401,13 +396,11 @@ textarea {
     font-family: "Nunito Sans", sans-serif;
     resize: none;
     font-size: 0.875rem;
-    transition: all .3s ease;
 }
 
 textarea:focus {
     outline: none;
     border-color: var(--brown-primary);
-    box-shadow: .5px 0px 8px 1px rgb(175, 105, 0);
 }
 
 /* Info Box */
@@ -459,7 +452,6 @@ textarea:focus {
     border-radius: 16px;
     padding: 1.5rem;
     border: 2px solid rgba(175, 105, 0, 0.2);
-    border: 1px solid rgb(209, 213, 219);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -518,13 +510,14 @@ textarea:focus {
 
 /* Preview */
 .preview-card {
+    background: red;
     background: white;
     border-radius: 16px;
     padding: 2rem 2rem 4rem 2rem;
+    border: 1px solid rgba(158, 132, 92, 0.2);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 2rem;
-    border: 1px solid rgb(209, 213, 219);
 }
 
 .preview-header {
@@ -532,7 +525,7 @@ textarea:focus {
     justify-content: space-between;
     align-items: center;
     padding-bottom: 1rem;
-    border-bottom: 1px solid rgb(209, 213, 219);
+    border-bottom: 1px solid rgba(158, 132, 92, 0.2);
     margin-bottom: 1.5rem;
 }
 
@@ -553,7 +546,7 @@ textarea:focus {
 .preview-canvas {
     background: #f9fafb;
     border-radius: 12px;
-    height: calc(100vh - 289px);
+    height: calc(100vh - 294px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -700,4 +693,34 @@ textarea:focus {
 
 .justify-between {
     justify-content: space-between;
+}
+
+.label-side-warning-text-wrapper {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: space-between;
+
+    .label-left-warning-text {
+        writing-mode: vertical-rl;
+        text-align: center;
+        font-size: 8px;
+        color: white;
+        line-height: 10px;
+        left: 14px;
+        position: relative;
+    }
+
+    .label-right-warning-text {
+        writing-mode: vertical-rl;
+        text-align: center;
+        font-size: 6px;
+        line-height: 8px;
+        color: white;
+        transform: rotate(180deg);
+        right: 12px;
+        position: relative;
+        text-align: justify;
+        padding: 12px 0;
+    }
 }
